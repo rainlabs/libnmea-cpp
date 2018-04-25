@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Public">
+      <UniqueIdentifier>{bfd3e6ec-50a9-4c3e-af9d-114040d9e299}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private">
+      <UniqueIdentifier>{42d64c30-81ab-40c9-a7c8-8994fbb76f21}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Public\nmea.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\targetver.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\gps_data.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\types.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\stdafx.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="Private\gps_data_gpgga.h">
+      <Filter>Private</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\geo_coord.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\gps_time.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="Private\Utils.h">
+      <Filter>Private</Filter>
+    </ClInclude>
+    <ClInclude Include="Private\validators.h">
+      <Filter>Private</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\nmea_exception.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Private\stdafx.cpp">
+      <Filter>Private</Filter>
+    </ClCompile>
+    <ClCompile Include="Private\gps_data.cpp">
+      <Filter>Private</Filter>
+    </ClCompile>
+    <ClCompile Include="Private\gps_data_gpgga.cpp">
+      <Filter>Private</Filter>
+    </ClCompile>
+    <ClCompile Include="Private\geo_coord.cpp">
+      <Filter>Private</Filter>
+    </ClCompile>
+    <ClCompile Include="Private\gps_time.cpp">
+      <Filter>Private</Filter>
+    </ClCompile>
+    <ClCompile Include="Private\Utils.cpp">
+      <Filter>Private</Filter>
+    </ClCompile>
+    <ClCompile Include="Private\validators.cpp">
+      <Filter>Private</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
