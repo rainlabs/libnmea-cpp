@@ -23,9 +23,13 @@ namespace nmea
 	const size_t GPGGA_AGE_DIFFERENTIAL_GPS_DATA = 12;
 	const size_t GPGGA_STATION_ID = 13;
 
+	/*
+	* GPS Data implementation for sentence type GPGGA
+	*/
 	class NMEA_API GPSDataGPGGA : public GPSDataInterface
 	{
 	public:
+		// sentence Prefix string
 		static FString GetTypeString();
 		virtual FString GetSentence() const override;
 		inline virtual SentenceType GetType() const override {

@@ -28,6 +28,9 @@
 
 namespace nmea
 {
+	/*
+	* Base Validator template
+	*/
 	template<typename T>
 	class Validator
 	{
@@ -47,6 +50,7 @@ namespace nmea
 		T m_oValue;
 	};
 
+	/* Complex type validators */
 	DEFINE_VALIDATOR(GPSTime);
 	DEFINE_VALIDATOR_TwoValue(Latitude);
 	DEFINE_VALIDATOR_TwoValue(Longitude);
@@ -60,12 +64,16 @@ namespace nmea
 		AltitudeValidator& Validate(const FString& sValue, const FString& sUnit);
 	};
 
+	/*
+	* Number validators: in range, min, check number
+	*/
 	template<typename T>
 	class NumberValidator : public Validator<T>
 	{
 	public:
 		NumberValidator(const FString& sSentence) : Validator<T>(sSentence) { this->m_oValue = 0; }
 
+		// IsNumber
 		NumberValidator& Validate(const FString& sValue)
 		{
 			if (sValue.empty()) return *this;
@@ -78,6 +86,7 @@ namespace nmea
 			return *this;
 		}
 
+		// IsNumber and in range
 		NumberValidator& ValidateRange(const FString& sValue, T minValue, T maxValue)
 		{
 			if (sValue.empty()) return *this;
@@ -92,6 +101,7 @@ namespace nmea
 			return *this;
 		}
 
+		// IsNumber and greater than minValue
 		NumberValidator& ValidateMin(const FString& sValue, T minValue)
 		{
 			if (sValue.empty()) return *this;

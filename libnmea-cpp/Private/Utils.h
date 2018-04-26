@@ -8,6 +8,9 @@
 
 namespace nmea
 {
+	/*
+	* Internal utils
+	*/
 	class Utils
 	{
 	public:

@@ -8,6 +8,9 @@
 
 namespace nmea
 {
+	/*
+	* GPS Time with hours, minutes, seconds, milliseconds
+	*/
 	class NMEA_API GPSTime
 	{
 	public:
@@ -19,6 +22,7 @@ namespace nmea
 		unsigned short Seconds() const;
 		unsigned short Milliseconds() const;
 		bool IsEmpty() const;
+		// TODO: provide format
 		FString ToString() const;
 
 	protected:

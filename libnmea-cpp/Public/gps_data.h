@@ -14,12 +14,19 @@ namespace nmea
 	class GPSDataInterface;
 	typedef std::shared_ptr<GPSDataInterface> GPSDataPtr;
 
+	/*
+	* GPS Data interface
+	* Each implementation should have own class, i.e. GPGGA
+	*/
 	class NMEA_API GPSDataInterface
 	{
 	public:
+		// Parse sentence and create instance
 		static GPSDataPtr Parse(const FString& sSentence);
 		virtual ~GPSDataInterface() {};
+		// Get origianl sentence
 		virtual FString GetSentence() const = 0;
+		// Get type of instance, i.e. GPGGA
 		virtual SentenceType GetType() const = 0;
 		virtual ValidationStatus GetValidateState() const = 0;
 		// UTC hhmmss.sss
@@ -47,9 +54,13 @@ namespace nmea
 	protected:
 		GPSDataInterface() {};
 
+		// Validate sentence format and checksum
 		ValidationStatus Validate(const FString& sSentence) const;
+		// Calculate sentence checksum
 		uint8_t SentenceChecksum(const FString& sSentence) const;
+		// Get checksum from end of sentence
 		uint8_t ExtractChecksum(const FString& sSentence) const;
+		// Extract parts from sentence, split by comma
 		void ExtractValues(const FString& sSentence, std::vector<FString>& vOutValues);
 	};
 }

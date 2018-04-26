@@ -8,6 +8,9 @@
 
 namespace nmea
 {
+	/*
+	* Base Class for Latitude | Logitude
+	*/
 	class NMEA_API GeoCoordinate
 	{
 	public:
@@ -25,12 +28,14 @@ namespace nmea
 		Direction m_eDirecton;
 	};
 
+	// GeoCoordinate with degree in range 0-90
 	class NMEA_API Latitude : public GeoCoordinate
 	{
 	public:
 		Latitude(int iDegrees = 0, double dMinutes = .0, Direction eDirection = Direction::UNKNOWN);
 	};
 
+	// GeoCoordinate with degree in range 0-180
 	class NMEA_API Longitude : public GeoCoordinate
 	{
 	public:

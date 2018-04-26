@@ -5,14 +5,16 @@
 #pragma once
 #include "stdafx.h"
 
-#define _S(text) text
+#define _S(text) text // L ## text for wchar
 
 namespace nmea
 {
+	/* Platform specific types char/wchar */
 	typedef char FChar;
 	typedef std::string FString;
 	typedef std::ostringstream FStream;
 	typedef std::chrono::milliseconds FDuration;
+	/* End platform specific types */
 
 	const FChar DIR_NORTH = _S('N');
 	const FChar DIR_SOUTH = _S('S');
@@ -28,14 +30,22 @@ namespace nmea
 	const FChar SENTENCE_PART_DELIM = _S(',');
 	const FChar UNIT_METER = _S('M');
 
+	// Possible sentence types
 	enum class SentenceType : uint8_t
 	{
 		UNKNOWN,
 		GPGGA,
-		GPGLL,
-		GPRMC
+		GPGLL, // Not implemented
+		GPRMC, // Not implemented
+		GPGSA, // Not implemented
+		GPGSV, // Not implemented
+		GPWPL, // Not implemented
+		GPBOD, // Not implemented
+		GPRMB, // Not implemented
+		GPRTE  // Not implemented
 	};
 
+	// Validation state type
 	enum class ValidationStatus : uint8_t
 	{
 		UNKNOWN,

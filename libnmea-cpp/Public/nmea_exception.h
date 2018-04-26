@@ -9,6 +9,9 @@
 
 namespace nmea
 {
+	/*
+	* BaseException class error message with sentence
+	*/
 	class NMEA_API BaseException : public std::runtime_error
 	{
 	public:
@@ -44,6 +47,7 @@ namespace nmea
 		{
 		};
 
+		// TODO: show number in what() message
 		virtual char const* what() const override {
 			return BaseException::what();
 		}
